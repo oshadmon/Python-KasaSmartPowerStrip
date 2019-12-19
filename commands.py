@@ -70,10 +70,18 @@ class Commands:
       :args: 
          plug_id - either name or ID of plug to turn on
       """
-      if plug_id in range(1,7):
-         self.power_strip.toggle_plug('on', plug_num=plug_id)
+      if isinstance(plug_id, int) and plug_id in range(1,7):
+         try: 
+            self.power_strip.toggle_plug('on', plug_num=plug_id)
+         except ValueError or TypeError: 
+            print('Invalid Plug Number.')
+            return 
       else: 
-         self.power_strip.toggle_plug('on', plug_name=plug_id)
+         try: 
+            self.power_strip.toggle_plug('on', plug_name=plug_id)
+         except ValueError or TypeError: 
+            print('Unable to find plug with name %s' % plug_id) 
+            return 
       print("Plug ID %s is turned on" % plug_id) 
 
    def turn_off(self, plug_id):
@@ -82,11 +90,18 @@ class Commands:
       :args: 
          plug_id - either name or ID of plug to turn on
       """
-      if plug_id in range(1,7):
-         self.power_strip.toggle_plug('off', plug_num=plug_id)
+      if isinstance(plug_id, int) and plug_id in range(1,7):
+         try:
+            self.power_strip.toggle_plug('off', plug_num=plug_id)
+         except ValueError or TypeError:
+            print('Invalid Plug Number.')
+            return
       else:
-         self.power_strip.toggle_plug('off', plug_name=plug_id)
+         try:
+            self.power_strip.toggle_plug('off', plug_name=plug_id)
+         except ValueError or TypeError:
+            print('Unable to find plug with name %s' % plug_id)
+            return
       print("Plug ID %s is turned off" % plug_id)
- 
 
 

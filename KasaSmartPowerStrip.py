@@ -179,7 +179,7 @@ class SmartPowerStrip(object):
             if target_plug:
                 plug_id = self.device_id + target_plug[0]['id']
             else:
-                raise ValueError('Unable to find plug with name ' + plug_name)
+                raise ValueError('Unable to find plug with name %s' % plug_name)
         else:
             raise ValueError('Unable to find plug.  Provide a valid plug_num or plug_name')
 
