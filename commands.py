@@ -1,3 +1,4 @@
+import socket 
 from KasaSmartPowerStrip import SmartPowerStrip
 
 class Commands:
@@ -71,7 +72,10 @@ class Commands:
          plug_id:int - plug id 
          plug_name:str - new plug name 
       """
-      self.power_strip.set_plug_name(plug_id, plug_name) 
+      try: 
+         self.power_strip.set_plug_name(plug_id, plug_name) 
+      except socket.timeout: 
+         pass 
       print("Plug %s was is now named %s" % (plug_id, plug_name)) 
  
    def turn_on(self, plug_id): 
