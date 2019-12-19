@@ -64,6 +64,16 @@ class Commands:
       output = 'Plug Info:\n\tID: %s\n\tAlias: %s\n\tState: %s\n\tUp Time: %s'
       print(output % (plug_id, plug_info['alias'], plug_info['state'], self.__convert_seconds(plug_info['on_time'])))
   
+   def set_name(self, plug_id:int, plug_name:str):
+      """
+      Update Plug Name 
+      :args: 
+         plug_id:int - plug id 
+         plug_name:str - new plug name 
+      """
+      self.power_strip.set_plug_name(plug_id, plug_name) 
+      print("Plug %s was is now named %s" % (plug_id, plug_name)) 
+ 
    def turn_on(self, plug_id): 
       """
       Turn on plug based on either ID number of name
