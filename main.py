@@ -9,7 +9,7 @@ def __help__():
    print("The following are sample commands that can be execute:"
          +"\n\tGet General Info: get info" 
          +"\n\tGet Info for specific Plug: get info ${plug_number} [Example: get info 1]" 
-         +"\n\tSet Plug Name: set plug ${plug_id} to ${new_name} [Example: set plug 1 to New Plug]"  
+         +"\n\tSet Plug Name: set plug name ${plug_id} to ${new_name} [Example: set plug 1 to New Plug]"  
          +"\n\tTurn On by ID: on ${plug_id} [Example: on 1]"
          +"\n\tTurn On by Name: on ${plug_name} [Example: on Coral Board]" 
          +"\n\tTurn Off by ID: off ${plug_id} [Example: off 1]"
