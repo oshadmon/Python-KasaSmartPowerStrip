@@ -7,9 +7,11 @@ def __help__():
    Print list of supported commands 
    """
    print("The following are sample commands that can be execute:"
+         +"\n\tBase Command (Showing Examples): python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'get help'"   
          +"\n\tGet General Info: get info" 
          +"\n\tGet Info for specific Plug: get info ${plug_number} [Example: get info 1]" 
          +"\n\tSet Plug Name: set plug ${plug_id} to ${new_name} [Example: set plug 1 to New Plug]"  
+         +"\n\tTurn On All: on all [Example: on all]" 
          +"\n\tTurn On by ID: on ${plug_id} [Example: on 1]"
          +"\n\tTurn On by Name: on ${plug_name} [Example: on Coral Board]" 
          +"\n\tTurn Off by ID: off ${plug_id} [Example: off 1]"

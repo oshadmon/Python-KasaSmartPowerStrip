@@ -104,4 +104,74 @@ Delete countdown timer rules:<br/>
 ```{"context":{"child_ids":["<plug childId>"]},"count_down":{"delete_all_rules":{}}}```
 
 
+# Main 
+The [main.py](main.py) and [commands.py](commands.py) are python scripts that support the original code ([KasaSmartPowerStrip.py](KasaSmartPowerStrip.py)) allowoing users to have an easier time accessing differnt functions 
+
+* Get Information Regarding the power strip 
+```
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'get info' 
+System Info:
+   Model: TP-LINK_Power Strip_907C HS300(US)
+   Device ID: 8006238CDE704C00681705EF7F7527D41B7E6E5A
+   Uptime: 1 day(s) 3 hour(s) 57 minute(s) 26 (seconds)
+   Version: 1.0.10
+      Build: 190103
+      Release: Rel.163517
+``` 
+
+* Get informatioon regarding a specific plug 
+```
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'get info 1' 
+Plug Info:
+   ID: 1
+   Alias: Coral Board
+   State: on
+   Up Time: 1 day(s) 3 hour(s) 38 minute(s) 45 (seconds)
+```
+
+* Set plug name (note plug doesn't need to be turned off) 
+```
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'set plug name 3 to New Plug' 
+Plug 3 was is now named New Plug 
+
+# Validate 
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'get info 3'
+Plug Info:
+   ID: 3
+   Alias: New Plug
+   State: off
+   Up Time: 0 day(s) 0 hour(s) 0 minute(s) 0 (seconds)
+```
+
+# Power on 
+``` 
+# Power on all plugs 
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'on all'
+Plug ID 1 is turned on 
+Plug ID 2 is turned on
+Plug ID 3 is turned on
+Plug ID 4 is turned on
+Plug ID 5 is turned on
+Plug ID 6 is turned on 
+
+# Power on a specific plug 
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'on 2'
+Plug ID 2 is turned on   
+``` 
+
+# Power off
+```
+# Power off all plugs 
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'off alll'
+Plug ID 1 is turned off   
+Plug ID 2 is turned off
+Plug ID 3 is turned off
+Plug ID 4 is turned off
+Plug ID 5 is turned off
+Plug ID 6 is turned off
+
+# Power on a specific plug 
+ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'off 2'
+Plug ID 2 is turned off
+``` 
 
