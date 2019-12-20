@@ -73,6 +73,20 @@ def main():
       plug_name = re.split('to ', args.cmd, flags=re.IGNORECASE)[-1] 
       calls.set_name(int(plug_id), plug_name) 
 
+   elif "on all" in args.cmd.lower(): 
+      """
+      Turn on all plugs 
+      :Sample Command: 
+         ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'on all'
+         Plug ID 1 is turned on 
+         Plug ID 2 is turned on
+         Plug ID 3 is turned on
+         Plug ID 4 is turned on
+         Plug ID 5 is turned on
+         Plug ID 6 is turned on
+      """
+      calls.turn_on_all() 
+
    elif 'on' in args.cmd.lower(): # Turn on a specific plug 
       """
       Turn on a specific plug either by name or ID 
@@ -89,6 +103,20 @@ def main():
       except Exception as e: 
          pass 
       calls.turn_on(plug_id)  
+
+   elif "off all" in args.cmd.lower():
+      """
+      Turn on all plugs 
+      :Sample Command: 
+         ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'off all'
+         Plug ID 1 is turned off 
+         Plug ID 2 is turned off
+         Plug ID 3 is turned off
+         Plug ID 4 is turned off
+         Plug ID 5 is turned off
+         Plug ID 6 is turned off
+      """
+      calls.turn_off_all()
 
    elif 'off' in args.cmd.lower(): # Turn off a specific plug 
       """

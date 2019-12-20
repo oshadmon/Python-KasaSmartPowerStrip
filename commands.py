@@ -98,6 +98,13 @@ class Commands:
             return 
       print("Plug ID %s is turned on" % plug_id) 
 
+   def turn_on_all(self): 
+      """
+      Turn on all plugs 
+      """
+      for plug in range(1,7): 
+         self.turn_on(plug)
+
    def turn_off(self, plug_id):
       """
       Turn off plug based on either ID number of name
@@ -118,4 +125,9 @@ class Commands:
             return
       print("Plug ID %s is turned off" % plug_id)
 
-
+   def turn_off_all(self): 
+      """
+      Turn off all plugs 
+      """
+      for plug in range(1,7): 
+         self.turn_off(plug) 
