@@ -143,7 +143,7 @@ Plug Info:
    Up Time: 0 day(s) 0 hour(s) 0 minute(s) 0 (seconds)
 ```
 
-# Power on 
+* Power on 
 ``` 
 # Power on all plugs 
 ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'on all'
@@ -159,7 +159,7 @@ ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0
 Plug ID 2 is turned on   
 ``` 
 
-# Power off
+* Power off
 ```
 # Power off all plugs 
 ubuntu@ori-foglamp:~$ python3 $HOME/Python-KasaSmartPowerStrip/main.py 192.168.0.88 --cmd 'off alll'
